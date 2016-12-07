@@ -16,7 +16,7 @@ var cid = process.env.CLIENT_ID || "3MVG9uudbyLbNPZMr8YN5sECNvfdjtEQp2pnYQbPNfpG
 var csecr = process.env.CLIENT_SECRET || "2349941058577237488";
 var lserv = process.env.LOGIN_SERVER || "https://login.salesforce.com";
 //var redir = process.env.REDIRECT_URI || "http://localhost:" + port + "/token";
-var redir = process.env.REDIRECT_URI || "https://oauthss.herokuapp.com/app.js";
+var redir = process.env.REDIRECT_URI || "https://oauthss.herokuapp.com";
 
 /**
  * Middleware to call identity service and attach result to session
