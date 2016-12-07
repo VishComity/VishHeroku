@@ -54,7 +54,7 @@ exports.oauth = function oauth(options) {
                 state = req.session.oauth_state;
                 delete req.session.oauth_state;
                 console.log('oauth done - redirecting to '+state);
-        		res.redirect('/accounts');
+        		res.redirect(state);
               }
             }).on('error', function(e) {
     			  console.error(e);
