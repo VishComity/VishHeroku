@@ -34,7 +34,7 @@ exports.oauth = function oauth(options) {
             req.oauth.loginServer = loginServer;
             req.oauth.clientId = clientId;
             req.oauth.clientSecret = clientSecret;
-            console.log('oAUTH COMPLETE --> ' + req.session.oauth);
+            console.log(req.session.oauth);
             next();
         } else if (req.query.code){
             // Callback from the Authorization Server
@@ -53,7 +53,6 @@ exports.oauth = function oauth(options) {
                 req.session.oauth = data;
                 state = req.session.oauth_state;
                 delete req.session.oauth_state;
-                console.log('oauth done - data ---> '+req.session);
                 console.log('oauth done - redirecting to '+state);
         		res.redirect(state);
               }
