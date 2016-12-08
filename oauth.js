@@ -53,7 +53,7 @@ exports.oauth = function oauth(options) {
                 req.session.oauth = data;
                 state = req.session.oauth_state;
                 delete req.session.oauth_state;
-                console.log('oauth done - data ---> '+data);
+                console.log('oauth done - data ---> '+req.session);
                 console.log('oauth done - redirecting to '+state);
         		res.redirect(state);
               }
