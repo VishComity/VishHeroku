@@ -34,7 +34,7 @@ exports.oauth = function oauth(options) {
             req.oauth.loginServer = loginServer;
             req.oauth.clientId = clientId;
             req.oauth.clientSecret = clientSecret;
-            console.log(req.session.oauth);
+            console.log('oAUTH COMPLETE --> ' + req.session.oauth);
             next();
         } else if (req.query.code){
             // Callback from the Authorization Server
