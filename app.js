@@ -1,8 +1,13 @@
 
+console.log('1');
 var express = require('express');
+console.log('2');
 var oauth = require('./lib/oauth');
+console.log('3');
 var app = express();
+console.log('4');
 var port = process.env.PORT || 3000;
+
 
 // Require Routes js
 var routesHome = require('./routes/home');
