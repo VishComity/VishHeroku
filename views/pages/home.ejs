@@ -26,7 +26,9 @@
         <script>
 			var url = "<%= ouathLightningURL %>";
 			var token = "Bearer "+"<%= oauthtoken %>";
+			var refreshToken = "refresh "+"<%= refreshtoken %>";
 			console.log(token);
+			console.log(refreshToken);
 			$Lightning.use("c:lotest", function() {},url,token );
 			function createChatterFeed(type, subjectId) {
 				document.getElementById("renderLtngComp").innerHTML = "";
