@@ -1,15 +1,6 @@
-var nforce = require('nforce');
+var connection = require('./lib/connection');
 var express = require('express');
 var port = process.env.PORT || 3000;
-
-var org = nforce.createConnection({
-	clientId: '3MVG9xOCXq4ID1uENR_n0vamNcV9ttUyOINbn6coRAQ4rj4QrMvdOoUozVXyqlXIZXQ0Yp1kgmpGRGXX0j1cB',
-	clientSecret: '5893789878304722858',
-	redirectUri: 'https://oauthss.herokuapp.com/oauthcallback',
-	apiVersion: 'v38.0',  // optional, defaults to current salesforce API version
-	environment: 'production',  // optional, salesforce 'sandbox' or 'production', production default
-	mode: 'multi' // optional, 'single' or 'multi' user mode, multi default
-});
 
 var app = express();
 
@@ -24,11 +15,11 @@ app.use('/home', routesHome);
 app.set('view engine', 'ejs');
 
 app.get('/', function(req,res){
-  res.redirect(org.getAuthUri());
+  res.redirect(connection.org.getAuthUri());
 });
 
 app.get('/oauthcallback', function(req, res) {
-	org.authenticate({code: req.query.code}, function(err, resp){
+	connection.org.authenticate({code: req.query.code}, function(err, resp){
 		if(!err) {
 			console.log('Access Token: ' + resp.access_token);
 			app.locals.oauthtoken = resp.access_token;
