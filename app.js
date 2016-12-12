@@ -2,6 +2,7 @@
 var express = require('express');
 var oauth = require('./lib/oauth');
 var app = express();
+var port = process.env.PORT || 3000;
 
 // Require Routes js
 var routesHome = require('./routes/home');
