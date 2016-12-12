@@ -1,7 +1,6 @@
-var connection = require('./lib/connection');
 var express = require('express');
+var oauth = require('./lib/oauth');
 var port = process.env.PORT || 3000;
-var nforce = require('nforce');
 
 var app = express();
 
@@ -15,21 +14,12 @@ app.use('/home', routesHome);
 
 app.set('view engine', 'ejs');
 
-app.get('/', function(req,res){
-  res.redirect(connection.getOrg().getAuthUri());
+app.get('/', function(req, res){
+	oauth.redirectAuthURI(res);
 });
 
 app.get('/oauthcallback', function(req, res) {
-	connection.getOrg().authenticate({code: req.query.code}, function(err, resp){
-		if(!err) {
-			console.log('Access Token: ' + resp.access_token);
-			app.locals.oauthtoken = resp.access_token;
-			app.locals.lightningEndPointURI = "https://vishlightningss-dev-ed.lightning.force.com/";
-			res.redirect('/home');
-		} else {
-			console.log('Error: ' + err.message);
-		}
-	});
+	oauth.authenticate(req, res, app);
 });
 
 // Served Localhost
