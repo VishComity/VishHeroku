@@ -20,6 +20,7 @@ app.get('/', function(req,res){
 });
 
 app.get('/oauthcallback', function(req, res, app) {
+	console.log('before redirectAuthURI');
 	if (oauth.authenticate(req, app)) {
 		res.redirect('/home');
 	}
