@@ -20,7 +20,9 @@ app.get('/', function(req,res){
 });
 
 app.get('/oauthcallback', function(req, res, app) {
-	oauth.authenticate(req, res, app);
+	if (oauth.authenticate(req, app)) {
+		res.redirect('/home');
+	}
 });
 
 // Served Localhost
