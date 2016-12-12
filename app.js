@@ -16,11 +16,11 @@ app.use('/home', routesHome);
 app.set('view engine', 'ejs');
 
 app.get('/', function(req,res){
-  res.redirect(connection.org.getAuthUri());
+  res.redirect(connection.getOrg().getAuthUri());
 });
 
 app.get('/oauthcallback', function(req, res) {
-	connection.global.org.authenticate({code: req.query.code}, function(err, resp){
+	connection.getOrg().authenticate({code: req.query.code}, function(err, resp){
 		if(!err) {
 			console.log('Access Token: ' + resp.access_token);
 			app.locals.oauthtoken = resp.access_token;
