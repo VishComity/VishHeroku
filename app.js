@@ -1,5 +1,5 @@
 var express = require('express');
-var oauth = require('./lib/oauth');
+var oauth = require('./lib/oAuth/oauth');
 var port = process.env.PORT || 3000;
 
 var app = express();
