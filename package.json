@@ -10,7 +10,14 @@
     "@salesforce-ux/design-system": "^1.0.0",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
+    "knex": "~0.7.3",
+    "bookshelf": "~0.7.7",
+    "pg": "~3.6.0",
     "nforce": "*"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "2.7.x"
   },
   "author": "mohith",
   "license": "ISC"
