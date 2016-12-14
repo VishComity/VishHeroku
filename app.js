@@ -1,3 +1,4 @@
+"use strict";
 var express = require('express');
 var oauth = require('./lib/oAuth/oauth');
 var port = process.env.PORT || 3000;
