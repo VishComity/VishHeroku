@@ -11,7 +11,12 @@
 			<div class="container">
 				<div class="jumbotron">
 					<h1>Lightning Out on Heroku</h1>
-					
+					<button id="chatterFeedButton" class="btn btn-primary btn-lg" onclick="createChatterFeed('NEWS')" >
+						Create Chatter Feed
+					</button>
+					<button id="sfAccountList" class="btn btn-primary btn-lg" onclick="showAccountList('NEWS')">
+						Show Account List
+					</button>
 				</div>
 				<div id="renderLtngComp"/>
 			</div>
@@ -19,7 +24,6 @@
         <footer>
         </footer>
 		<script>
-		/*
 			var url = "<%= ouathLightningURL %>";
 			var token = "Bearer "+"<%= oauthtoken %>";
 			//var refreshToken = "refresh "+"<%= refreshtoken %>";
@@ -35,7 +39,7 @@
 				document.getElementById("renderLtngComp").innerHTML = "";
 				$Lightning.createComponent("c:AccountList", {type: type, subjectId: subjectId}, "renderLtngComp"); 
 			}
-		*/
+
         </script>
 	</body>
 </html>
