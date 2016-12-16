@@ -23,6 +23,10 @@ app.get('/oauthcallback', function(req, res) {
 	oauth.authenticate(req, res, app);
 });
 
+app.get('/home', function(req, res){
+	oauth.retrieveAuthDisplayInfo(req, res);
+});
+
 // Served Localhost
 console.log('Served: http://localhost:' + port);
 app.listen(port);
