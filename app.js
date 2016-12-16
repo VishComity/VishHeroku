@@ -28,6 +28,7 @@ app.get('/oauthcallback', function(req, res) {
 
 app.get('/home', function(req, res){
 	oauth.retrieveAuthDisplayInfo(req, res);
+	
 });
 
 // Served Localhost
