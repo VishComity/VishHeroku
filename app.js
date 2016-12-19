@@ -6,12 +6,12 @@ var port = process.env.PORT || 3000;
 var app = express();
 
 // Require Routes js
-var routesHome = require('./routes/home');
+var routesAdmin = require('./routes/admin');
 
 // Serve static files
 app.use(express.static(__dirname + '/public'));
 
-app.use('/home', routesHome);
+app.use('/admin', routesAdmin);
 
 app.set('view engine', 'ejs');
 
