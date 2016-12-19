@@ -26,7 +26,7 @@ app.get('/oauthcallback', function(req, res) {
 	oauth.authenticate(req, res, app);
 });
 
-app.get('/home', function(req, res, app){
+app.get('/customerInfo', function(req, res, app){
 	oauth.retrieveAuthDisplayInfo(req, res);
 	
 });
