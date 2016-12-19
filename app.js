@@ -26,7 +26,7 @@ app.get('/oauthcallback', function(req, res) {
 	oauth.authenticate(req, res, app);
 });
 
-app.get('/customerInfo', function(req, res, app){
+app.get('/customerInfo', function(req, res){
 	oauth.retrieveAuthDisplayInfo(req, res, app);
 	
 });
@@ -34,5 +34,3 @@ app.get('/customerInfo', function(req, res, app){
 // Served Localhost
 console.log('Served: http://localhost:' + port);
 app.listen(port);
-
-module.exports=app;
