@@ -5,11 +5,6 @@ var port = process.env.PORT || 3000;
 
 var app = express();
 
-app.locals({
-    
-});
-
-
 //Require Routes js
 var routesHome = require('./routes/home');
 
