@@ -15,6 +15,8 @@ var routesAdmin = require('./routes/admin');
 app.use(express.static(__dirname + '/public'));
 
 app.use('/admin', routesAdmin);
+app.use('/home', routesHome);
+
 
 app.set('view engine', 'ejs');
 
