@@ -5,6 +5,11 @@ var port = process.env.PORT || 3000;
 
 var app = express();
 
+app.locals({
+    
+});
+
+
 //Require Routes js
 var routesHome = require('./routes/home');
 
@@ -34,3 +39,10 @@ app.get('/customerInfo', function(req, res, app){
 // Served Localhost
 console.log('Served: http://localhost:' + port);
 app.listen(port);
+
+module.exports=app;
+
+require('./settings');
+
+//settings.js
+var app= require('./app');
