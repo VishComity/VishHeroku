@@ -27,7 +27,7 @@ app.get('/oauthcallback', function(req, res) {
 });
 
 app.get('/customerInfo', function(req, res, app){
-	oauth.retrieveAuthDisplayInfo(req, res);
+	oauth.retrieveAuthDisplayInfo(req, res, app);
 	
 });
 
