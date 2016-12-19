@@ -6,21 +6,25 @@ var port = process.env.PORT || 3000;
 var app = express();
 
 // Require Routes js
-//var routesHome = require('./routes/home');
+var routesHome = require('./routes/home');
 //Require Routes js
-var routesAdmin = require('./routes/admin');
+//var routesAdmin = require('./routes/admin');
 
 // Serve static files
 app.use(express.static(__dirname + '/public'));
 
-//app.use('/home', routesHome);
-app.use('/admin', routesAdmin);
+app.use('/home', routesHome);
+//app.use('/admin', routesAdmin);
 
 app.set('view engine', 'ejs');
 
-app.get('/admin', function(req, res){
+app.get('/home', function(req, res){
 	oauth.redirectAuthURI(res);
 });
+
+//app.get('/admin', function(req, res){
+//	oauth.redirectAuthURI(res);
+//});
 
 app.get('/oauthcallback', function(req, res) {
 	oauth.authenticate(req, res, app);
