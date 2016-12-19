@@ -36,8 +36,3 @@ console.log('Served: http://localhost:' + port);
 app.listen(port);
 
 module.exports=app;
-
-require('./settings');
-
-//settings.js
-var app= require('./app');
