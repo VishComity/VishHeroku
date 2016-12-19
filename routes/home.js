@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/home', function(req, res) {
+	console.log('Before redirect to home');
     res.render('pages/home', {
         oauthtoken: req.app.locals.oauthtoken,
         ouathLightningURL: req.app.locals.lightningEndPointURI,
