@@ -11,11 +11,11 @@ var routesHome = require('./routes/home');
 // Serve static files
 app.use(express.static(__dirname + '/public'));
 
-app.use('/admin', routesHome);
+app.use('/home', routesHome);
 
 app.set('view engine', 'ejs');
 
-app.get('/admin', function(req, res){
+app.get('/', function(req, res){
 	oauth.redirectAuthURI(res);
 });
 
