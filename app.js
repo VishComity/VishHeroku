@@ -15,7 +15,7 @@ app.use('/home', routesHome);
 
 app.set('view engine', 'ejs');
 
-app.get('/', function(req, res){
+app.get('/home', function(req, res){
 	oauth.redirectAuthURI(res);
 });
 
